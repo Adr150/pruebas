@@ -1,0 +1,33 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Buscar
+{% endblock %}
+
+{% block main %}
+
+<div class="center">
+<form action="/books" method="GET">
+    <div class="form-group">
+        <input autocomplete="off" autofocus class="form-control" name="q" placeholder="isbn, title or author..." type="text"/>
+    </div>
+    <br>
+  
+
+    
+    <button class="btn btn-primary" type="submit">Buscar</button>
+</form>
+</div>
+    
+{% endblock %}
+
+<!-- div class="form-group">
+    <select class="form-control" name="b">
+        <option disabled selected value="">Title</option>
+
+        {%for book in books:%}
+            <option value="{{book['isbn']}}">{{book["title"]}}</option>
+        {%endfor%}
+    </select>
+</div> -->

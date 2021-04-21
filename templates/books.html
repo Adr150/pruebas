@@ -1,0 +1,24 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Buscar
+{% endblock %}
+
+{% block main %}
+
+
+
+        {%for book in rows:%}
+            <div class="re">
+                <div class="ft">
+                <a href="/book?isbn={{book['isbn']}}">{{book['title']}}</a>
+                <p>{{book['author']}}</p>
+                </div>
+            </div>
+        {%endfor%}
+
+    
+{% endblock %}
+
+

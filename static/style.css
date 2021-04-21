@@ -1,0 +1,70 @@
+body{
+    background-color: black;
+    color: white;
+
+    background-image: url('bfondo.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+
+
+
+.ft{
+    background-color: rgba(0, 0, 0, 0.411);
+    
+}
+.re{
+    margin-top: 2%;
+    width: 30%;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    
+    background-image: url('Fondo.png');
+    
+    color: white;
+}
+
+.pr{
+    text-decoration: none;
+    Color: rgb(155, 234, 245);
+    font-size: 40px;
+}
+
+
+div > a{
+    text-decoration: none;
+    color:rgb(1, 165, 165)
+
+}
+
+div > a :hover{
+    color: black;
+
+}
+
+.darkbg{
+    background-color: rgba(0, 0, 0, 0.555);
+}
+
+
+.center{
+    width: 40%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 1%;
+}
+
+.center6{
+    width: 60%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 1%;
+}
+
+
+

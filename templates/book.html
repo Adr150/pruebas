@@ -1,0 +1,123 @@
+
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Book: {{row["title"]}}
+{% endblock %}
+
+{% block main %}
+
+
+
+       
+        <div class="row darkbg" style="border-style: groove; width: 60%;">
+            <div class="col-9">
+                <h3>Title: {{row["title"]}}</h3>
+            </div>
+
+            <div class="col-4">
+                <img src="{{ginfo['imageLinks']['thumbnail']}}" alt="{{row['isbn']}}" width="60%">
+            </div>
+            <br>
+            <div class="col-9">
+               <b>Autor: </b> {{row["author"]}}
+            </div>
+            
+
+            <div class="col-9">
+                <b>Year: </b> {{row["yearp"]}}
+             </div>
+            
+            <div class="col-9">
+                <b>ISBN: </b>{{row["isbn"]}}
+            </div>
+
+            <div class="col-9">
+                <b>Points: </b>{{rowo["points"]}}
+            </div>
+            
+            <div class="col-9">
+                <b>Comments: </b>{{rowo["resenas"]}}
+            </div>
+            <hr>
+            <strong><u>GoodReads</u></strong>
+            <div class="col-9">
+                <b>Rating: </b>{{ginfo["averageRating"]}}
+            </div>
+            <div class="col-9">
+                <b>Ratings Count: </b>{{ginfo["ratingsCount"]}}
+            </div>
+            
+            <div class="col-12">
+                <b>Description: </b>{{ginfo["description"]}}
+            </div>
+          </div>
+
+
+
+        <div class="w-100" style="height: 60px;"></div>
+        <strong>Comentarios:</strong>
+      
+        
+        {%for comment in comments: %}
+        
+        <hr>
+        <div class="darkbg row" style="margin-top: 2%;">
+            <div class="col-12">
+                <h3>{{comment["username"]}}</h3>
+            </div>
+            <div class="col-1">
+                <b>Points: </b>
+            </div>
+            <div class="col-11">
+                {{comment["points"]}}
+            </div>
+
+            <div class="col-1">
+                <b>Say: </b>
+            </div>
+            <div class="col-11">
+                {{comment["comment"]}}
+            </div>
+
+          </div>
+
+          {%endfor%}
+
+          <hr>
+
+          <div class="w-100" style="height: 60px;"></div>
+        
+        <div class="center darkbg" style="width: 60%;">
+        <form action="/comment" method="POST">
+            <div class="form-group">
+                <label for="points">Puntua</label>
+                <select class="form-control" id="points" name="points">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+
+           
+            <div class="form-group">
+                <label for="commentary">Comentar publicamente:</label>
+                <textarea class="form-control" id = "commentary" name="commentary" rows="3"></textarea>
+            </div>
+            <input type="hidden" name="book" value="{{row['isbn']}}">
+            <br>
+            <button type="submit" class="btn btn-primary mb-2">Enviar</button>
+        </form>
+    </div>
+
+         
+
+    
+
+    
+{% endblock %}
+
+
