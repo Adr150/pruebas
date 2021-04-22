@@ -1,8 +1,13 @@
+@font-face {
+    font-family: "Letra-chida";
+    src: url("Bitalo.ttf");
+}
+
 body{
     background-color: black;
     color: white;
 
-    background-image: url('bfondo.jpeg');
+    background-image: url('bfondo.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -66,5 +71,10 @@ div > a :hover{
     padding: 1%;
 }
 
+.letra_chida{
+    font-family: letra-chida;
+    font-size: 20px;
+    color: rgb(203, 218, 0);
+}
 
 

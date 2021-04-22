@@ -10,12 +10,14 @@
 
 
         {%for book in rows:%}
+            {%if book.isbn != 'isbn'%}
             <div class="re">
                 <div class="ft">
                 <a href="/book?isbn={{book['isbn']}}">{{book['title']}}</a>
                 <p>{{book['author']}}</p>
                 </div>
             </div>
+            {%endif%}
         {%endfor%}
 
     

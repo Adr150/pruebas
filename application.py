@@ -53,10 +53,12 @@ def books():
  
     rows = db.execute(consulta,{"q":q}).fetchall()
 
-    print(len(rows))
+    
 
     if len(rows) == 0:
         return apology("No esta :c", 404)
+    
+    
     
 
 
@@ -66,13 +68,18 @@ def books():
 @login_required
 def info():
     if not request.args.get("isbn"):
-        return apology("No hay nada que mostrar",403)
+        return apology("No hay nada que mostrar",404)
     
     #user_id = session["user_id"]
     q = request.args.get("isbn")
 
     consulta = "SELECT * FROM books where isbn = :q;"
     row = db.execute(consulta,{"q":q}).fetchone()
+
+    if not row:
+        return apology("No hay nada que mostrar",404)
+
+
 
     comentarios = db.execute("SELECT * FROM comments INNER JOIN users ON user_id = id WHERE b_isbn = :isbn;", {"isbn":row["isbn"]}).fetchall()
 
@@ -85,6 +92,10 @@ def info():
         rowo["points"] = puntos[0] // rowo["resenas"] 
 
     ginfo = lookup(q)
+
+    if not ginfo:
+        ginfo = {"items": 0}
+
 
     #print(ginfo)
 

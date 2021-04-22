@@ -5,8 +5,11 @@
 {% endblock %}
 
 {% block main %}
-    <div class="center">
-    <img alt="{{ top }}" class="border" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://yt3.ggpht.com/ytc/AAUvwniZSPFEA3mIPXB1SOf0uYgrIpFax-JCSuCa4J_lhg=s900-c-k-c0x00ffffff-no-rj"/>
-    <!-- i.imgur.com/CsCgN7Ll.png -->
-</div>
+    <div class="center darkbg">
+        
+        <h1 style="font-size: 30;">{{code}}</h1>
+        <hr>
+        <p>{{message}}</p>
+        
+    </div>
 {% endblock %}

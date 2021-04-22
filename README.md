@@ -1,2 +1,3 @@
-# pruebas
-Nada mas para probar
+# Project 1
+
+Web Programming with Python and JavaScript

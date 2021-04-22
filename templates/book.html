@@ -17,7 +17,11 @@
             </div>
 
             <div class="col-4">
+                {%if ginfo.items == 0:%}
+                <img src="../static/image.jpg" alt="{{row['isbn']}}" width="60%">
+                {%else:%}
                 <img src="{{ginfo['imageLinks']['thumbnail']}}" alt="{{row['isbn']}}" width="60%">
+                {%endif%}
             </div>
             <br>
             <div class="col-9">
@@ -42,6 +46,13 @@
             </div>
             <hr>
             <strong><u>GoodReads</u></strong>
+
+            {%if ginfo.items == 0:%}
+            <div class="col-9">
+                <b>No info</b>
+            </div>
+            {%else%}
+
             <div class="col-9">
                 <b>Rating: </b>{{ginfo["averageRating"]}}
             </div>
@@ -52,6 +63,8 @@
             <div class="col-12">
                 <b>Description: </b>{{ginfo["description"]}}
             </div>
+
+            {%endif%}
           </div>
 
 

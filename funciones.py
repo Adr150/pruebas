@@ -9,7 +9,7 @@ from functools import wraps
 def apology(message, code=400):
     """Renders message as an apology to user."""
     
-    return code
+    return render_template("apology.html",code=code,message=message),code
 
 
 def login_required(f):
@@ -34,7 +34,7 @@ def lookup(isbn):
     try:
         info = response["items"][0]["volumeInfo"]
     except:
-        info = {}
+        info = None
 
     return info
 
