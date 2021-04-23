@@ -93,8 +93,7 @@ def info():
 
     ginfo = lookup(q)
 
-    if not ginfo:
-        ginfo = {"items": 0}
+    
 
 
     #print(ginfo)

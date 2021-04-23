@@ -17,10 +17,10 @@
             </div>
 
             <div class="col-4">
-                {%if ginfo.items == 0:%}
+                {%if not ginfo:%}
                 <img src="../static/image.jpg" alt="{{row['isbn']}}" width="60%">
                 {%else:%}
-                <img src="{{ginfo['imageLinks']['thumbnail']}}" alt="{{row['isbn']}}" width="60%">
+                    <img src="{{ginfo['imageLinks']['thumbnail']}}" alt="{{row['isbn']}}" width="60%">
                 {%endif%}
             </div>
             <br>
